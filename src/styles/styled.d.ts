@@ -5,7 +5,7 @@ declare module "styled-components";
 export interface IDefaultTheme {
   title: string;
 
-  color: {
+  colors: {
     primary: string;
     secundary: string;
     tertiary: string;
