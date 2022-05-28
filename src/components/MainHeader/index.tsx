@@ -1,11 +1,12 @@
 /* eslint-disable react/function-component-definition */
 import React from "react";
+import Toggle from "../Toggle";
 import { Container, Welcome, UserName, Profile } from "./styles";
 
 const MainHeader: React.FC = () => {
   return (
     <Container>
-      <h1>Toggle</h1>
+      <Toggle />
       <Profile>
         <Welcome>
           Bem-vindo,
