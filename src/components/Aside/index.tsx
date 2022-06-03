@@ -33,11 +33,11 @@ const Aside: React.FC = () => {
           Dashboard
         </MenuItemLink>
         <MenuItemLink href="#">
-          <AiOutlineArrowDown />
+          <AiOutlineArrowUp />
           Entradas
         </MenuItemLink>
         <MenuItemLink href="#">
-          <AiOutlineArrowUp />
+          <AiOutlineArrowDown />
           Saídas
         </MenuItemLink>
         <MenuItemLink href="#">
