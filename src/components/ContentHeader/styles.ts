@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface ITitleContainerProps {
+  lineColor: string;
+}
+
 export const Container = styled.div`
   width: 100%;
 
@@ -9,7 +13,7 @@ export const Container = styled.div`
   margin-bottom: 25px;
 `;
 
-export const TitleContainer = styled.div`
+export const TitleContainer = styled.div<ITitleContainerProps>`
   > h1 {
     color: ${props => props.theme.colors.white};
     font-size: 1.6rem;
@@ -22,9 +26,11 @@ export const TitleContainer = styled.div`
       top: 32px;
       left: 0;
       width: 40px;
-      background: ${props => props.theme.colors.warning};
+      background-color: ${props => props.lineColor};
     }
   }
 `;
 
-export const Controllers = styled.div``;
+export const Controllers = styled.div`
+  display: flex;
+`;
