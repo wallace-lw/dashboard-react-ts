@@ -30,84 +30,72 @@ const Lists: React.FC = () => {
 
       <Content>
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
           amount="R$ 225,43"
         />
         <HistoryFinance
-          cardColor="#031927"
           tagColor="#E44C4E"
           title="Conta de Luz"
           subtitle="06/06/2002"
