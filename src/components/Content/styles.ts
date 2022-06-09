@@ -14,11 +14,14 @@ export const Container = styled.div`
 
   ::-webkit-scrollbar {
     width: 10px;
-    background-color: ${props => props.theme.colors.primary};
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.tertiary};
+    background-color: ${props => props.theme.colors.tertiary};
     border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${props => props.theme.colors.primary};
   }
 `;
