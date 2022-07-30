@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable react/function-component-definition */
 import React from "react";
 import { BsSunFill, BsFillMoonFill } from "react-icons/bs";
 import Switch from "react-switch";

@@ -1,5 +1,4 @@
 /* eslint-disable react/require-default-props */
-/* eslint-disable react/function-component-definition */
 import React, { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Content, Filters } from "./styles";
