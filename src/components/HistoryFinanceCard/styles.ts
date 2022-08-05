@@ -42,7 +42,7 @@ export const Tag = styled.div<ITagProps>`
   position: absolute;
   left: 3px;
 
-  width: 5px;
+  width: 6px;
   height: 60%;
   border-radius: 5px;
   background-color: ${props => props.color};

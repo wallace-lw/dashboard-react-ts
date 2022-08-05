@@ -1,16 +1,37 @@
 /* eslint-disable react/require-default-props */
-import React, { useMemo } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Content, Filters } from "./styles";
 import SelectInput from "../../components/SelectInput";
 import ContentHeader from "../../components/ContentHeader";
 import HistoryFinance from "../../components/HistoryFinanceCard";
 
+import gains from "../../repositories/gains";
+import expenses from "../../repositories/expenses";
+
+import formatCurrency from "../../utils/formatCurrency";
+import formatDate from "../../utils/formatDate";
+
+interface IData {
+  id: string;
+  description: string;
+  amountFormatted: string;
+  frenquency: string;
+  dateFormatted: string;
+  tagColor: string;
+}
+
 const Lists: React.FC = () => {
   const params = useParams();
 
+  const [data, setData] = useState<IData[]>([]);
+
   const title = useMemo(() => {
     return params.type === "entry-balance" ? "Entradas" : "Saídas";
+  }, [params]);
+
+  const listData = useMemo(() => {
+    return params.type === "entry-balance" ? gains : expenses;
   }, [params]);
 
   const months = [
@@ -34,6 +55,20 @@ const Lists: React.FC = () => {
     { value: 2020, label: "2020" },
   ];
 
+  useEffect(() => {
+    const response = listData.map(item => {
+      return {
+        id: String(Math.random()),
+        description: item.description,
+        amountFormatted: formatCurrency(Number(item.amount)),
+        frenquency: item.frequency,
+        dateFormatted: formatDate(item.date),
+        tagColor: item.frequency === "recorrente" ? "#4E41F0" : "#E44C4E",
+      };
+    });
+    setData(response);
+  }, []);
+
   return (
     <Container>
       <ContentHeader title={title} lineColor="#E44C4E">
@@ -51,78 +86,15 @@ const Lists: React.FC = () => {
       </Filters>
 
       <Content>
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
-        <HistoryFinance
-          tagColor="#E44C4E"
-          title="Conta de Luz"
-          subtitle="06/06/2022"
-          amount="R$ 225,43"
-        />
+        {data.map(item => (
+          <HistoryFinance
+            key={item.id}
+            tagColor={item.tagColor}
+            title={item.description}
+            subtitle={item.dateFormatted}
+            amount={item.amountFormatted}
+          />
+        ))}
       </Content>
     </Container>
   );
